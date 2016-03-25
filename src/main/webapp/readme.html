@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!--
+Copyright 2016 ikke.
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<html>
+    <head>
+        <title>README</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>
+            <h2>Implementations Details</h2>
+            <ul>
+                <li>usually one would split the Frontend from the backend into different (sub-)projects. This wasn't done here to keep it lean</li>
+                <li>Normalerweise würde man die zugrundeligende Parserimplementierung (hier Jsoup) weg abstrahieren.<br /> Das würde eine Menge Boilerplate erzeugen. <br />
+                    Aus Zeit und Übersichtlichkeitsgründen wurde deshalb darauf verzichtet.
+                </li>
+            </ul>
+            <h2>Goals</h2>
+            <ul>
+                <li>minimalistic REST-Service</li>
+                <li>few dependencies as possible</li>
+                <li>provide an API that can easily adopt changes in Requirements. Ideally let the user create new Queries.  </li>
+                
+            </ul>
+            <h2>TODO</h2>
+            <ul>
+                <li>Consider using GSON</li>
+                <li>use sub Resources</li>
+                <li>consider using AsyncResponses (Suspended)</li>
+                <li>consider versioning</li>
+            </ul>
+            <h2>Annahmen</h2>
+            <ul>
+                <li>Die Applikation ist nicht öffentlich. Die Applikation ist von Prinzip ein Einfallstor, um DOS-Attacken zu verschleiern. 
+                    Es wurden keine Sicherheitsmechanismen (Authentifizierung/Autorisoerung) eingebaut</li>
+            </ul>
+            <h2>Things not done</h2>
+            <ul>
+                <li> <a href="http://gdom.graphene-python.org">gdom</a> Python implementation of DOM-Parsing using GraphQL. <br />
+                     Seems to be the ideal tool for this job, but JAVA is an requirement und ich konnte so schnell nicht gut genug Python lernen.
+                </li>
+            </ul>
+            <h2>Things, that should have been done</h2>
+            <ul>
+                <li>Unit Tests use real URLs. This should be mocked.</li>
+            </ul>
+            <h2>Testing</h2>
+            <ul>
+                <li>http://antoniogoncalves.org/2012/12/19/test-your-jax-rs-2-0-web-service-uris-without-mocks/</li>
+            </ul>
+        </div>
+        
+    </body>
+</html>

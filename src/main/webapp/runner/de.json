@@ -1,0 +1,8 @@
+{
+    "=fetchButtonDesc=": "Los!",
+    "=Enter_Url=": "Gib eine vollständige URL ein:",
+    "=input_hint=": "muss http:// oder https:// sein",
+    "=try_sample=": "Oder probiere dies Beispiel",
+    "=fatal_internal=": "Das ist komplett was kaputt. Läuft der Application Server?",
+    "=doing_link_check=": "Überprüfe die Links"
+}

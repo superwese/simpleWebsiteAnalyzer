@@ -1,0 +1,27 @@
+{
+  "name": "is24Example",
+  "authors": [
+    "superwese <frank.wesemann@gmail.com>"
+  ],
+  "description": "a sample",
+  "main": "index.html",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp/js/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-dynamic-locale": "^0.1.30",
+    "angular-translate-interpolation-messageformat": "^2.11.0",
+    "angular-translate-loader-partial": "^2.11.0",
+    "messageformat": "^0.3.1",
+    "angular-sanitize": "^1.5.2"
+  }
+}

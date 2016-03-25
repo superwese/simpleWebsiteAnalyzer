@@ -1,0 +1,66 @@
+<div class="row">
+
+    <div class="col-sm-9">
+        <h1 class="page-header">Dashboard</h1>
+        <div class="info">Hier kann die bestehenden Checks anpassen / neue erstellen oder bestehende Checks entfernen.</div>
+        <h2>Diese Checks sind zur Zeit aktiv:</h2>
+        <uib-accordion close-others="true">
+            <uib-accordion-group ng-repeat="(name, check) in Editor.activeChecks" is-disabled="!check.isUserEditable">
+                <uib-accordion-heading>
+                    <div class="col-sm-2">{{name}}</div><div class="col-sm-9">{{check.describe()}}</div><div class="col-sm1"><i ng-class="{'glyphicon-pencil': check.isUserEditable}" class="glyphicon"></i></div>
+                </uib-accordion-heading>
+                <form>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2">Selector: <i class="small pull-right">Folgt der <a href="https://api.jquery.com/category/selectors/">jQuery Syntax</a></i></div><div class="col-sm-2 small">{{check.typeof() || 'Dein Browser kann kein Function.name' }}</div>
+                    <input type="text" ng-model="check.selector" class="col-sm-offset-2 col-sm-8"><div class=" col-sm-2 "><button ng-click="Editor.removeCheck(name)" class="btn btn-lg btn-danger pull-right glyphicon glyphicon-trash"></button></div>
+                </div>
+                </form>
+            </uib-accordion-group>
+
+        </uib-accordion>
+    </div>
+    <div class="col-sm-3 .navbar-right">
+        <h5>Hier kann man neue auswählen:</h5>
+        <div class="row" ng-repeat="(type, ignore) in Editor.availableChecks">
+            <div class="col-sm-9 vcenter"><div>{{type}}</div></div>
+            <div class="col-sm-2 vcenter"><div><button ng-click="Editor.newCheck(type)" class="btn btn-lg glyphicon glyphicon-plus pull-right"></button></div></div>
+        </div>
+
+    </div>
+
+</div>
+<div class="row" ng-if="Editor.isCreatingNew">
+    <div class="row" style="height: 20px"></div>
+    <div class="row"><h2>Erstelle einen neuen Check:</h2>
+        vom Typ <b>{{Editor.creatorOptions.typeToCreate}}</b>.
+    </div>
+    <div class="row">
+    <form name="newCheckForm" class="form-inline" ng-submit="Editor.addCheck()">
+        
+        <div class="col-sm-10">
+                <div class="form-group" ng-class="{'has-error': newCheckForm.name.$invalid}" >
+                    <label for="checkName">Name</label>
+                    <input ng-model="Editor.creatorOptions.name" required id="checkName" class="form-control" type="text" name="name">
+                </div>
+                <div class="form-group " ng-class="{'has-error': newCheckForm.selector.$invalid}">
+                    <label for="checkSelector">Selector</label>
+                    <input ng-model="Editor.creatorOptions.selector" required class="form-control" id="checkSelector" type="text" name="selector">
+                </div>
+                <div class="form-group" ng-if="Editor.creatorOptions.needsAdditionalParameter" ng-class="{'has-error': newCheckForm.additionalProperty.$invalid}">
+                    <label for="additionalProperty">Wert des Attributes/Propertys</label>
+                    <input ng-model="Editor.creatorOptions.additional" required class="form-control" id="additionalProperty" type="text" name="additionalProperty">
+                </div>
+        </div>
+        <div class="col-sm-2" >
+            <button class="btn btn-lg" ng-class="{'btn-danger': newCheckForm.$invalid, 'btn-success': newCheckForm.$valid }" ng-disabled="newCheckForm.$invalid">Specihern</button> 
+        </div>
+    </form>
+    </div>
+    <div class="row">
+        <uib-alert ng-if="Editor.creatingError" type="danger" close="Editor.creatingError = {}">
+            {{Editor.creatingError.message}}  
+        </uib-alert>
+    </div>
+</div>
+  
+

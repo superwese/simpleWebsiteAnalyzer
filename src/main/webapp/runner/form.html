@@ -1,0 +1,37 @@
+
+<div ng-controller="RunnerCtrl as Runner" class="container">
+
+    <form name="url_form">
+        <div class="form-group " ng-class="{'has-error': url_form.$invalid}" >
+            <label for="queryinput" translate>=Enter_Url=</label> <a href="sample.html" ng-click="Runner.tryThis($event)" translate>=try_sample=</a>
+            <input uib-tooltip="{{'=input_hint=' | translate}}" id="queryinput" class="form-control" type="url" name="url2fetch" ng-model="Runner.toFetch"/>
+            <button class="btn btn-success btn-lg" ng-click="Runner.fetch()" translate>=fetchButtonDesc=</button>
+            <span class="btn btn-success" ng-if="Runner.isFetching"><img src="img/loading-bars.svg"></span>
+            <a href="../img/loading-bars.svg"></a>
+        </div>
+
+    </form>
+    <div class="row">
+        <div class="col-sm-4" ng-if="Runner.stepsToPerform"><uib-progressbar max="Runner.numChecks" value="Runner.stepsToPerform"></uib-progressbar></div>
+        <div class="col-sm-4" ng-if="Runner.linkChecker && ( Runner.linkChecker.linksToCheck != Runner.linkChecker.linksChecked ) ">
+            <span translate>=doing_link_check=</span> <uib-progressbar  class="progress-striped active" type="success" max="Runner.linkChecker.linksToCheck" value="Runner.linkChecker.linksChecked">
+                {{Runner.linkChecker.linksChecked}} / {{Runner.linkChecker.linksToCheck}}
+            </uib-progressbar>
+        </div>
+    </div>
+   Soviele: {{Runner.stepsToPerform}}
+    <div>
+        <uib-alert ng-if="Runner.hasError" type="danger" close="Runner.closeWarning('response')">{{Runner.response.responseStatus}} : {{Runner.response.errormessage}}  </uib-alert>
+    </div>
+   <table class="bg-info table table-bordered" ng-if="Runner.results">
+    <thead>
+     <tr> <th> Name</th> <th> Ergebnis</th> </tr>
+    </thead>
+        <tbody>
+  
+   <tr ng-repeat="(name, ergebnis) in Runner.results" class="bg-info">
+       <td>{{name}}</td><td ng-bind-html="ergebnis.toString()"></td>
+   </tr>
+   </table>
+   <a href="../js/checker/editor.html"></a>
+</div>
