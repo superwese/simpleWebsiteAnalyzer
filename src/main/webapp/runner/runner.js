@@ -207,20 +207,17 @@
                 },this);
                 
                 linkChecker.linksToCheck = Object.keys(effectiveLinksToTest).length;
-                console.log("vorher: ", counter, "nachher: ", linkChecker.linksToCheck);
                 angular.forEach(effectiveLinksToTest, function(partialResult, key ){
                     var resolver = function(resolve,reject) {
                         try {
                             //Ping die URL. alle Antworten lösen nach dem responseStatus auf
                             RemoteService.ping(partialResult.testedLink).then(
                                     function(erfolg){
-                                        console.log("erfolg", erfolg);
                                         var theCode = erfolg.data.responseStatus;
                                         partialResult.status = theCode;
                                         linkChecker.linksChecked++;
                                         resolve(partialResult);
                                     }, function(fehler){
-                                        console.log("fehler", fehler);
                                         var theCode = fehler.data.responseStatus;
                                         partialResult.status = theCode;
                                         linkChecker.linksChecked++;
@@ -238,9 +235,8 @@
                 });
                 var bigPromise = $q.all(allPromises);
                 bigPromise.then(function(oki){
-                    console.log("bigOki", oki);
                 },function(nichoki){
-                    console.log("nixoki", nichoki);
+                    console.error("nixoki", nichoki);
                 });
                 return bigPromise;
                 //return effectiveLinksToTest;
