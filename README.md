@@ -8,7 +8,7 @@ Follows the Links on the page and outputs stats.
 ## Requirements
 - bower 
 - a modern webbrowser 
-- a JEE7 container
+- a JEE7 container (tested with Glasfish4 and wildfly 10)
 
 ## Dependencies
 - http://www.jsoup.org
