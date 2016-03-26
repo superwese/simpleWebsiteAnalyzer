@@ -59,7 +59,7 @@
         $translateProvider.useSanitizeValueStrategy('escapeParameters');
         $translatePartialLoaderProvider.addPart('home');
 
-        tmhDynamicLocaleProvider.localeLocationPattern('js/libs/angular.js/i18n/angular-locale_{{locale}}.js');
+        tmhDynamicLocaleProvider.localeLocationPattern('js/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.defaultLocale('de');
 
     }
