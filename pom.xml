@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.wese.is24</groupId>
-    <artifactId>is24Example</artifactId>
+    <artifactId>simpleWebsiteAnalyzer</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>is24Example</name>
+    <name>simpleWebsiteAnalyzer</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
