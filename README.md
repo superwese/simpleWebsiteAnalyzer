@@ -14,6 +14,6 @@ requires bower a modern webbrowser and a JEE7 container
 
 ## Install
 
-  <code>mvn install<code>
+  <code>mvn install</code>
 
 and deploy.
