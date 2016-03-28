@@ -30,3 +30,6 @@ runs a single test run.
   <code>npm run continue-test</code>
   
 runs karma in server mode.
+
+Eine ausführlichere Beschreibung gibt es hier:
+http://superwese.github.io/simpleWebsiteAnalyzer/
