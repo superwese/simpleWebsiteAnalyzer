@@ -1,0 +1,29 @@
+{
+  "name": "websiteanalyzer",
+  "version": "1.0.0",
+  "description": "a simple WebSite Analyzer",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/superwese/simpleWebsiteAnalyzer.git"
+  },
+  "author": "superwese",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/superwese/simpleWebsiteAnalyzer/issues"
+  },
+  "homepage": "https://github.com/superwese/simpleWebsiteAnalyzer#readme",
+  "devDependencies": {
+    "bower": "^1.7.x",
+    "jasmine": "^2.4.1",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-jasmine": "^0.3.8"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "test": "karma start src/test/frontend/karma.conf.js --single-run",
+    "continue-test": "karma start src/test/frontend/karma.conf.js"
+  }
+}
