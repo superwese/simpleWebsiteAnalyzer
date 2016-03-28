@@ -54,7 +54,7 @@
             var theConstructor, theCheck, args = vm.creatorOptions;
             try {
                 theConstructor = AvailableChecks[vm.creatorOptions.typeToCreate];
-                theCheck = new theConstructor(args.selector, args.additionalParameter); //wenigstens ist einmal was einfacher
+                theCheck = new theConstructor(args.selector, args.additional); //wenigstens ist einmal was einfacher
                 CheckerProvider.putChecker(args.name, theCheck);
             } catch (e) {
                 vm.creatingError = e;
