@@ -61,7 +61,7 @@
             var headerCounter = new AggregateTagnameChecker(":header");
             me.putChecker("Alle Header", headerCounter);
             var hasloginForm = new CountingCheck("input[type=password]");
-            hasloginForm.withFormatter(function(found){return found >0});
+            hasloginForm.withFormatter(function(found){return found >0;});
             me.putChecker("hasLoginForm", hasloginForm);
 //            var linkChecker = new AttributeExtractingCheck("a[href]", "href");
 //            me.putChecker("linkChecker", linkChecker);
@@ -133,7 +133,7 @@
     Check.prototype.withFormatter = function(formatFn) {
         this.formatter = formatFn;
         return this;
-    }
+    };
     
     /**
      * a Checker that returns the number of found nodes
@@ -179,7 +179,7 @@
      */
     var AttributeExtractingCheck = function(selector, attribute) {
         if ( ! attribute ) {
-            throw "AttributeExtractingCheck needs an attribute";
+          throw new RangeError( "AttributeExtractingCheck needs an attribute" );
         }
         Check.call(this, selector);
         this.attrName = attribute;
@@ -228,7 +228,7 @@
      */
     var PropertyExtractingCheck = function(selector, property) {
         if ( ! property ) {
-            throw "PropertyExtractingCheck needs an property";
+            throw new RangeError("PropertyExtractingCheck needs an property");
         }
         Check.call(this, selector);
         this.propName = property;
