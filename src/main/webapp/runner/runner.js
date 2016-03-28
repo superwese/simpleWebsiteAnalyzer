@@ -254,15 +254,7 @@
          * @param {Object} Promise ein Array von Ergebnissen pro Link.
          * @returns {Object} Promise auf das formatierte Gesamtergebnis
          */
-        function xxlinkCheckFormatter(result) {
-            
-        }
-        
-        /*
-         * Sammelt alle Ergebnisse, macht so Auswertung und Gibt das als eine Tabelle zuück. 
-         * @param {Object} Promise auf das Ergebnis der Linkprüfung, 
-         * @returns {String} eine Representation des Ergebnisses (in HTML)
-         */
+
         function linkCheckFormatter(result) {
             var output = [],
                 deferred = $q.defer();
