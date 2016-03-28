@@ -273,7 +273,7 @@
                 });
                 //Und hier weiß man jetzt, dass man dafür eine directive braucht
                 output.push('<pre>');
-                output.push('intere Links: \t', numIntern, '\n');
+                output.push('interne Links: \t', numIntern, '\n');
                 output.push('externe Links: \t', numExtern, '\n');
                 output.push('Links mit Fehlern:', numNotOK, '\n');
                 if ( numNotOK > 0  ) {
