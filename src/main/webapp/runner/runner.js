@@ -89,6 +89,7 @@
         //declare some methods: making all methods "public should simplify testing.
         vm.performChecks = performChecks;
         vm.createLinkChecker = createLinkChecker;
+        vm.ermitteleDocType = ermitteleDocType;
 
         vm.fetch = function () {
             vm.isWorking = vm.isFetching = true;
@@ -290,7 +291,7 @@
         }
         
         /**
-         * Erzeugt aus dem übergebenen Object einen String, der die HTML widerspiegeln soll.
+         * Erzeugt aus dem übergebenen Object einen String, der die HTML Version widerspiegeln soll.
          * Dieser wird aus piblicName, PublicID und SystemId erzeugt.
          * Ist der publicName 'html' undund gibt es keine publicId und keine systemId, so wird angenommen, das es HTML 5 ist.
          * @param {type} doctypeObj
